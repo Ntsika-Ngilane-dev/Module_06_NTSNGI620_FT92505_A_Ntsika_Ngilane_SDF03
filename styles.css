@@ -1,23 +1,160 @@
-/* Base Styles */
-
+/* Root variables for consistent sizing */
 :root {
-    font-size: 10px;
+  font-size: 10px;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: "Open Sans", Arial, sans-serif;
-    min-height: 100vh;
-    background-color: #fafafa;
-    color: #262626;
-    padding-bottom: 3rem;
+  font-family: 'Arial', sans-serif;
+  background-color: #fafafa;
+  color: #262626;
 }
 
-img {
-    display: block;
+.container {
+  max-width: 935px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Loader styles */
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Profile header */
+.profile {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 30px;
+}
+
+.profile-user-settings {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-user-name {
+  font-size: 2.6rem;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.btn {
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  padding: 5px 9px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #efefef;
+}
+
+.profile-stats ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  font-size: 1.6rem;
+}
+
+.profile-bio {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.profile-real-name {
+  font-weight: bold;
+}
+
+/* Gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+  border-radius: 5px;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  color: #999;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-user-settings {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-stats ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
