@@ -1,166 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeSpace Pets Instagram 😺</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
-  <!-- Loader -->
-  <div id="loader-wrapper">
-    <div class="loader"></div>
-  </div>
-
   <header>
-    <div class="container">
-      <div class="profile">
-        <div class="profile-image">
-          <img src="./images/cat-codespace.png" alt="Profile Image" />
+    <div class="profile">
+      <img src="./images/cat-codespace.png" alt="Profile Image" class="profile-pic">
+      <div class="profile-info">
+        <h1 class="username">codespace_pets</h1>
+        <button class="btn">Edit Profile</button>
+        <div class="stats">
+          <span><strong>549</strong> posts</span>
+          <span><strong>45,682</strong> followers</span>
+          <span><strong>1</strong> following</span>
         </div>
-        <div class="profile-user-settings">
-          <h1 class="profile-user-name">codespace_pets</h1>
-          <button class="btn profile-edit-btn">Edit Profile</button>
-          <button class="btn profile-settings-btn" aria-label="profile settings">
-            <i class="fa fa-cog" aria-hidden="true"></i>
-          </button>
-        </div>
-        <div class="profile-stats">
-          <ul>
-            <li><span class="profile-stat-count">549</span> posts</li>
-            <li><span class="profile-stat-count">45,682</span> followers</li>
-            <li><span class="profile-stat-count">130</span> following</li>
-          </ul>
-        </div>
-        <div class="profile-bio">
-          <p><span class="profile-real-name">CodeSpace Pets</span> We love to meow and code 🐾</p>
-        </div>
+        <p class="bio">CodeSpace Pets ✨ The hangout place for the best pets in tech 🌟🐾</p>
       </div>
     </div>
   </header>
 
   <main>
-    <div class="container">
-      <div class="gallery">
-        <!-- Repeat for all images -->
-        <div class="gallery-item">
-          <img src="./images/bailey.png" class="gallery-image" alt="Bailey" />
-          <div class="overlay">
-            <div class="info">
-              <span class="likes"><i class="fa fa-heart"></i> 0</span>
-              <span class="comments"><i class="fa fa-comment"></i> 0</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="./images/startlett.jpg" class="gallery-image" alt="Startlett" />
-          <div class="overlay">
-            <div class="info">
-              <span class="likes"><i class="fa fa-heart"></i> 0</span>
-              <span class="comments"><i class="fa fa-comment"></i> 0</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="./images/mr-chomsky.png" class="gallery-image" alt="Mr. Chomsky" />
-          <div class="overlay">
-            <div class="info">
-              <span class="likes"><i class="fa fa-heart"></i> 0</span>
-              <span class="comments"><i class="fa fa-comment"></i> 0</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="./images/scarab.png" class="gallery-image" alt="Scarab" />
-          <div class="overlay">
-            <div class="info">
-              <span class="likes"><i class="fa fa-heart"></i> 0</span>
-              <span class="comments"><i class="fa fa-comment"></i> 0</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="./images/baronnashor.png" class="gallery-image" alt="Baron Nashor" />
-          <div class="overlay">
-            <div class="info">
-              <span class="likes"><i class="fa fa-heart"></i> 0</span>
-              <span class="comments"><i class="fa fa-comment"></i> 0</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="./images/gabrielle.jpg" class="gallery-image" alt="Gabrielle" />
-          <div class="overlay">
-            <div class="info">
-              <span class="likes"><i class="fa fa-heart"></i> 0</span>
-              <span class="comments"><i class="fa fa-comment"></i> 0</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="./images/jarrod.jpg" class="gallery-image" alt="Jarrod" />
-          <div class="overlay">
-            <div class="info">
-              <span class="likes"><i class="fa fa-heart"></i> 0</span>
-              <span class="comments"><i class="fa fa-comment"></i> 0</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="./images/mr_goose.jpg" class="gallery-image" alt="Mr Goose" />
-          <div class="overlay">
-            <div class="info">
-              <span class="likes"><i class="fa fa-heart"></i> 0</span>
-              <span class="comments"><i class="fa fa-comment"></i> 0</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="./images/dog-codespace.png" class="gallery-image" alt="Code Dog" />
-          <div class="overlay">
-            <div class="info">
-              <span class="likes"><i class="fa fa-heart"></i> 0</span>
-              <span class="comments"><i class="fa fa-comment"></i> 0</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="./images/forrest.jpg" class="gallery-image" alt="Forrest" />
-          <div class="overlay">
-            <div class="info">
-              <span class="likes"><i class="fa fa-heart"></i> 0</span>
-              <span class="comments"><i class="fa fa-comment"></i> 0</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="./images/louise.jpg" class="gallery-image" alt="Louise" />
-          <div class="overlay">
-            <div class="info">
-              <span class="likes"><i class="fa fa-heart"></i> 0</span>
-              <span class="comments"><i class="fa fa-comment"></i> 0</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="./images/tired.jpg" class="gallery-image" alt="Tired" />
-          <div class="overlay">
-            <div class="info">
-              <span class="likes"><i class="fa fa-heart"></i> 0</span>
-              <span class="comments"><i class="fa fa-comment"></i> 0</span>
-            </div>
-          </div>
+    <div class="gallery">
+      <!-- Repeat this block for each image -->
+      <div class="gallery-item">
+        <img src="./images/bailey.PNG" alt="Pet" class="gallery-image">
+        <div class="overlay">
+          <span class="likes"><i class="fa fa-heart"></i> 0</span>
+          <span class="comments"><i class="fa fa-comment"></i> 0</span>
         </div>
       </div>
+      <!-- Add additional image blocks below -->
+      <div class="gallery-item">
+        <img src="./images/startlett.jpg" alt="Pet" class="gallery-image">
+        <div class="overlay">
+          <span class="likes"><i class="fa fa-heart"></i> 0</span>
+          <span class="comments"><i class="fa fa-comment"></i> 0</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="./images/mr-chomsky.png" alt="Pet" class="gallery-image">
+        <div class="overlay">
+          <span class="likes"><i class="fa fa-heart"></i> 0</span>
+          <span class="comments"><i class="fa fa-comment"></i> 0</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="./images/scarab.png" alt="Pet" class="gallery-image">
+        <div class="overlay">
+          <span class="likes"><i class="fa fa-heart"></i> 0</span>
+          <span class="comments"><i class="fa fa-comment"></i> 0</span>
+        </div>
+      </div>
+      <!-- Add the rest of the pets here -->
     </div>
   </main>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2025 CodeSpace Pets. All rights reserved.</p>
-    </div>
+    <p>&copy; 2025 CodeSpace Pets. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
