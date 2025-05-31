@@ -1,144 +1,77 @@
-/* Base Reset */
+/* Reset some defaults */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #fafafa;
-  color: #333;
 }
 
-.container {
-  max-width: 950px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Loader */
-#loader-wrapper {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.loader {
-  width: 40px;
-  height: 40px;
-  border: 5px solid #ccc;
-  border-top: 5px solid #333;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-/* Header */
-.profile {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 40px 0;
-}
-
-.profile-image img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.profile-user-settings {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.profile-user-name {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.btn {
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  background: #fff;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.profile-stats ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  font-size: 1.4rem;
-}
-
-.profile-bio {
-  font-size: 1.3rem;
-}
-
-/* Gallery Grid */
+/* Gallery layout */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
+  padding: 20px;
 }
 
+/* Gallery item container */
 .gallery-item {
   position: relative;
   overflow: hidden;
-  border-radius: 6px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
 }
 
-.gallery-image {
+/* Image styling */
+.gallery-item img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
 }
 
-.gallery-item:hover .gallery-image {
+.gallery-item:hover img {
   transform: scale(1.05);
 }
 
-/* Overlay */
-.overlay {
+/* Overlay setup */
+.gallery-item .overlay {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
   opacity: 0;
   transition: opacity 0.3s ease;
-  color: white;
-  font-size: 1.5rem;
 }
 
 .gallery-item:hover .overlay {
   opacity: 1;
 }
 
-/* Footer */
-footer {
+/* Info box inside overlay */
+.overlay .info {
   text-align: center;
-  padding: 20px;
-  color: #999;
   font-size: 1.2rem;
+}
+
+.overlay .likes, .overlay .comments {
+  display: block;
+  margin: 5px 0;
+}
+
+/* Profile and other layout sections (optional adjustments) */
+header, footer, .profile {
+  text-align: center;
+  padding: 10px;
 }
