@@ -93,7 +93,7 @@ body {
 .gallery-item {
   position: relative;
   width: 100%;
-  height: 240px;
+  aspect-ratio: 1 / 1; /* Enforces square shape */
   overflow: hidden;
   border-radius: 8px;
 }
@@ -102,8 +102,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
+
 
 .gallery-item:hover .gallery-image {
   transform: scale(1.05);
