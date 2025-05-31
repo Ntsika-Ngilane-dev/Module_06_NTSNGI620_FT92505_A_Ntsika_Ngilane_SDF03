@@ -1,4 +1,3 @@
-/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,70 +7,134 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #fafafa;
+  color: #262626;
 }
 
-/* Gallery grid: fixed columns with fixed sized items */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+.container {
+  max-width: 960px;
+  margin: 0 auto;
   padding: 20px;
-  justify-content: center;
 }
 
-/* Each gallery item */
-.gallery-item {
-  position: relative;
-  width: 280px;
-  height: 280px;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+/* Loader */
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Profile Styles */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.profile-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-user-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.btn {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  background-color: white;
   cursor: pointer;
 }
 
-/* Images exactly fill the container, cropped if needed */
-.gallery-item img {
+.profile-stats ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  font-size: 16px;
+}
+
+.profile-bio {
+  font-size: 14px;
+}
+
+/* Gallery Styles */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
+}
+
+.gallery-item {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   transition: transform 0.3s ease;
 }
 
-.gallery-item:hover img {
+.gallery-item:hover .gallery-image {
   transform: scale(1.05);
 }
 
-/* Overlay */
-.gallery-item .overlay {
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* vertical center */
-  align-items: center; /* horizontal center */
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
   opacity: 0;
-  transition: opacity 0.3s ease;
-  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
   font-weight: bold;
-  user-select: none;
-  pointer-events: none; /* so only hover triggers the overlay */
+  gap: 20px;
+  transition: opacity 0.3s ease;
 }
 
 .gallery-item:hover .overlay {
   opacity: 1;
-  pointer-events: auto;
 }
 
-/* Likes and comments spacing */
-.overlay .likes,
-.overlay .comments {
-  margin: 8px 0;
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
 }
-
