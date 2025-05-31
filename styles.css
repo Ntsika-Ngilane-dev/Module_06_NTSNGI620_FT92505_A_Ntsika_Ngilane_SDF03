@@ -1,4 +1,4 @@
-/* Reset some defaults */
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,23 +10,27 @@ body {
   background-color: #fafafa;
 }
 
-/* Gallery layout */
+/* Gallery grid: fixed columns with fixed sized items */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   padding: 20px;
+  justify-content: center;
 }
 
-/* Gallery item container */
+/* Each gallery item */
 .gallery-item {
   position: relative;
+  width: 280px;
+  height: 280px;
   overflow: hidden;
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  cursor: pointer;
 }
 
-/* Image styling */
+/* Images exactly fill the container, cropped if needed */
 .gallery-item img {
   width: 100%;
   height: 100%;
@@ -39,39 +43,35 @@ body {
   transform: scale(1.05);
 }
 
-/* Overlay setup */
+/* Overlay */
 .gallery-item .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center; /* horizontal center */
   opacity: 0;
   transition: opacity 0.3s ease;
+  font-size: 1.4rem;
+  font-weight: bold;
+  user-select: none;
+  pointer-events: none; /* so only hover triggers the overlay */
 }
 
 .gallery-item:hover .overlay {
   opacity: 1;
+  pointer-events: auto;
 }
 
-/* Info box inside overlay */
-.overlay .info {
-  text-align: center;
-  font-size: 1.2rem;
+/* Likes and comments spacing */
+.overlay .likes,
+.overlay .comments {
+  margin: 8px 0;
 }
 
-.overlay .likes, .overlay .comments {
-  display: block;
-  margin: 5px 0;
-}
-
-/* Profile and other layout sections (optional adjustments) */
-header, footer, .profile {
-  text-align: center;
-  padding: 10px;
-}
